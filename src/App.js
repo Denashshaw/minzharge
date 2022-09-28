@@ -10,6 +10,7 @@ const App = () => {
     const getMenuData = (open) => {
         setdata(!data)
     }
+    
     return (
         <Router>
             <Navbar getMenuData={getMenuData} />
