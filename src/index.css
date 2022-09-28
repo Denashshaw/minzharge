@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navClass{
+    @apply px-8;
+    @apply py-5;
+    @apply whitespace-nowrap;
+}
+
+.fade-anim img {
+    animation: fadeAnim 0.5s ease-out;
+  }
+  @keyframes fadeAnim {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
