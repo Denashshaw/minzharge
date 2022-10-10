@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/minzharge/static/css/main.4b1040dc.css",
+    "main.js": "/minzharge/static/js/main.c9e34984.js",
+    "index.html": "/minzharge/index.html",
+    "main.4b1040dc.css.map": "/minzharge/static/css/main.4b1040dc.css.map",
+    "main.c9e34984.js.map": "/minzharge/static/js/main.c9e34984.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b1040dc.css",
+    "static/js/main.c9e34984.js"
+  ]
+}
