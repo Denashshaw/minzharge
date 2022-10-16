@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://Denashshaw.github.io/minzharge",
+  "homepage": "https://Denashshaw.github.io/minzharge",
   "name": "minzharge",
   "version": "0.1.0",
   "private": true,
@@ -15,8 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.12",
     "gh-pages": "^4.0.0",
     "postcss": "^8.4.16",

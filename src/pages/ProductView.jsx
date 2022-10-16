@@ -1,96 +1,112 @@
 import React, { useState } from 'react'
 import {BsBatteryCharging} from 'react-icons/bs'
+import ProductCarousal from '../components/ProductCarousal';
+import ProductVariants from './ProductVariants';
 
-function ProductView() {
-    const [open, setOpen] = useState(false)
+const assetUrl = process.env.NODE_ENV === 'production' ? '/minzharge/assets/': '/minzharge/assets/';
+
+// passing the navbar props for hiding the image
+function ProductView({data:open = false}) {
+
   return (
-    <div className='m-12 grid w-[80%] justify-center'>
-        <div className='grid gap-5 grid-cols-2'>
-            <div className=''>
-                <img src="http://test.minzharge.com/img/Nexzu/Bazinga/BazingaCargo_1.jpg" alt="" />
+    <>
+    <div className='w-full'>
+    <div className='grid w-[80%] mx-auto mt-10'>
+        <div className='grid gap-5 md:grid-cols-2'>
+            <div className={open ? 'hidden': 'p-2'}>
+                <ProductCarousal />
             </div>
-            <div className=''>
-                <h1 className='text-3xl mb-5'>Nexzu Bazinga Cargo</h1>
-                <div className='mb-5'>
-                    <label htmlFor="type"></label>
-                    <select name="" id="type" className='w-[200px] p-3 border-2 border-black rounded outline-none'>
-                        <option value="" disabled>Select Type </option>
-                        <option value="lead">Lead</option>
-                        <option value="lithium">Lithium</option>
-                    </select>
+            <div className='grid p-2 justify-center'>
+                <div className='flex gap-5'>
+                    <h1 className='text-3xl'>Nexzu Bazinga Cargo</h1>
+                    <div className=''>
+                        <label htmlFor="type"></label>
+                        <select name="" id="type" className='w-[200px] p-3 border-2 border-black rounded outline-none'>
+                            <option value="" disabled>Select Type </option>
+                            <option value="lead">Lead</option>
+                            <option value="lithium">Lithium</option>
+                        </select>
+                    </div>
                 </div>
 
-                <h1 className='text-3xl text-green-600 mb-5'>$ 51,000 <sub className='text-xs text-black'>Avg Ex-showroom price</sub></h1>
+                {/* <div className=''> */}
+                <div className='flex mt-5 mb-5'>
+                    <div className='flex gap-5 justify-center items-center mr-5'>
+                            <BsBatteryCharging outline size={32} />
+                        <div className='w-[102px]'>
+                            <p>Battery</p>
+                            <p>26.8 kWh</p>
+                        </div>
+                    </div>
+                    
+                    <div className='flex gap-5 justify-center items-center mr-5'>
+                            <BsBatteryCharging outline size={32} />
+                        <div className='w-[102px]'>
+                            <p>Battery</p>
+                            <p>26.8 kWh</p>
+                        </div>
+                    </div>
+                    
+                    <div className='flex gap-5 justify-center items-center mr-5'>
+                            <BsBatteryCharging outline size={32} />
+                        <div className='w-[102px]'>
+                            <p>Battery</p>
+                            <p>26.8 kWh</p>
+                        </div>
+                    </div>
 
-                <div className='flex gap-5 justify-items-center items-center mb-5'>
+                    </div>
+                {/* </div> */}
+
+                {/* second section with icons */}
+                <div className='flex mt-5 mb-5'>
+                    <div className='flex gap-5 justify-center items-center mr-5'>
+                            <BsBatteryCharging outline size={32} />
+                        <div className='w-[102px]'>
+                            <p>Range</p>
+                            <p>170 km</p>
+                        </div>
+                    </div>
+                    
+                    <div className='flex gap-5 justify-center items-center mr-5'>
+                            <BsBatteryCharging outline size={32} />
+                        <div className='w-[102px]'>
+                            <p>Energy Usage</p>
+                            <p>159 Wh/km</p>
+                        </div>
+                    </div>
+                    
+                    <div className='flex gap-5 justify-center items-center mr-5'>
+                            <BsBatteryCharging outline size={32} />
+                        <div className='w-[102px]'>
+                            <p>Fast Charge</p>
+                            <p>33 kW</p>
+                        </div>
+                    </div>
+
+                    </div>
+
+                {/* <div className='flex gap-5 justify-items-center items-center mb-8'>
                     <div className='w-[30px] h-[30px] bg-red-500'></div>
                     <div>Red</div>
                     <div className='w-[30px] h-[30px] bg-green-500'></div>
                     <div>Green</div>
                     <div className='w-[30px] h-[30px] bg-yellow-500'></div>
                     <div>Yellow</div>
-                </div>
+                </div> */}
 
-                {/* <div className=''> */}
-                    <div className='flex'>
-                        <div className='flex gap-5 justify-center items-center mr-5'>
-                                <BsBatteryCharging outline size={32} />
-                            <div>
-                                <p>Battery</p>
-                                <p>26.8 kWh</p>
-                            </div>
-                        </div>
-                        
-                        <div className='flex gap-5 justify-center items-center mr-5'>
-                                <BsBatteryCharging outline size={32} />
-                            <div>
-                                <p>Battery</p>
-                                <p>26.8 kWh</p>
-                            </div>
-                        </div>
-                        
-                        <div className='flex gap-5 justify-center items-center mr-5'>
-                                <BsBatteryCharging outline size={32} />
-                            <div>
-                                <p>Battery</p>
-                                <p>26.8 kWh</p>
-                            </div>
-                        </div>
 
+                <h1 className='text-4xl text-green-600 mb-10'>$ 51,000 <sub className='text-xs text-black'>Avg Ex-showroom price</sub></h1>
+                    <hr className='mt-1'/>
+                    <div className=''>
+                        <button className='bg-yellow-500 px-20 py-3 text-xl rounded text-white mt-8'>Get offers</button>
                     </div>
-                {/* </div> */}
-
-                {/* second section with icons */}
-                <div className='flex mt-5'>
-                        <div className='flex gap-5 justify-center items-center mr-5'>
-                                <BsBatteryCharging outline size={32} />
-                            <div>
-                                <p>Range</p>
-                                <p>170 km</p>
-                            </div>
-                        </div>
-                        
-                        <div className='flex gap-5 justify-center items-center mr-5'>
-                                <BsBatteryCharging outline size={32} />
-                            <div>
-                                <p>Energy Usage</p>
-                                <p>159 Wh/km</p>
-                            </div>
-                        </div>
-                        
-                        <div className='flex gap-5 justify-center items-center mr-5'>
-                                <BsBatteryCharging outline size={32} />
-                            <div>
-                                <p>Fast Charge</p>
-                                <p>33 kW</p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <hr className='mt-10'/>
             </div>
         </div>
+        <ProductVariants />
     </div>
+    </div>
+    </>
   )
 }
 

@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/minzharge/static/css/main.4b1040dc.css",
-    "main.js": "/minzharge/static/js/main.c9e34984.js",
+    "main.css": "/minzharge/static/css/main.cbe8bee0.css",
+    "main.js": "/minzharge/static/js/main.d8f6c25e.js",
     "index.html": "/minzharge/index.html",
-    "main.4b1040dc.css.map": "/minzharge/static/css/main.4b1040dc.css.map",
-    "main.c9e34984.js.map": "/minzharge/static/js/main.c9e34984.js.map"
+    "main.cbe8bee0.css.map": "/minzharge/static/css/main.cbe8bee0.css.map",
+    "main.d8f6c25e.js.map": "/minzharge/static/js/main.d8f6c25e.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b1040dc.css",
-    "static/js/main.c9e34984.js"
+    "static/css/main.cbe8bee0.css",
+    "static/js/main.d8f6c25e.js"
   ]
 }

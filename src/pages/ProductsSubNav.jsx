@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink, Outlet} from 'react-router-dom'
 
-function Products() {
+function ProductsSubNav() {
     // const [selected, setSelected] = useState(false)
     // useEffect(() => {
 
@@ -36,4 +36,4 @@ function Products() {
   )
 }
 
-export default Products
+export default ProductsSubNav

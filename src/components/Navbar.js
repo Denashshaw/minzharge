@@ -26,7 +26,7 @@ function Navbar({getMenuData}) {
     <div className='flex justify-between'>
         <div className='ml-5 md:ml-12'>
             <NavLink to={homePath} end>
-                <img src={assetUrl+"/Brands_Logos/ahrma.jpg"} alt="Minzharge Logo" width={65}/>
+                <img src={assetUrl+"/logo-small.png"} alt="Minzharge Logo" width={200}/>
             </NavLink>
         </div>
         {/* For Larger screens laptop and desktops */}
