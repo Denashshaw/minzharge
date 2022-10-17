@@ -3,7 +3,7 @@ import {BsBatteryCharging} from 'react-icons/bs'
 
 function ProductVariants() {
     const [clamp, setClamp] = useState(false)
-    const [power, setPower] = useState(false)
+    const [expand, setExpand] = useState(false)
 
     const table_data = [{
         name: "iQube Standard",
@@ -22,7 +22,7 @@ function ProductVariants() {
 ];
 
   return (
-    <div className='my-20'>
+    <div className='my-20 w-[80%] px-5 mx-auto'>
         <h3 className='font-sans text-xl mb-8 font-bold'>Variants Price List</h3>
         <table className='table-auto w-full text-sm text-gray-500'>
             <thead>
@@ -47,7 +47,7 @@ function ProductVariants() {
 
         <div className='my-20'>
             <h3 className='font-sans text-xl mb-8 font-bold'>About Rompus+</h3>
-            <p className={clamp ? "line-clamp-none": "line-clamp-3"}>
+            <p className={clamp ? "line-clamp-none": "line-clamp-2"}>
                 Here's a block of text from a blog post that isn't conveniently three lines long like you designed
                 for originally. It's probably like 6 lines on mobile or even on desktop depending on how you have
                 things laid out. Truly a big pain in the derriere, and not the sort of thing you expected to be
@@ -100,22 +100,26 @@ function ProductVariants() {
             
             {[1,2,3,4].map(res => 
             <>
-            <div className='mt-5 text-center md:text-left'>
+            <div className='mt-5 text-center'>
                 <div className='flex'>
                     <BsBatteryCharging size={32} className='text-gray-400' />
                     <h6 className='text-xl font-semibold pl-5'>Power {JSON.stringify(res)}</h6>
                 </div>
-                <div className={power === res ? 'grid md:grid-cols-2 p-5 overflow-none' : 'grid md:grid-cols-2 p-5 w-full h-[200px] overflow-hidden'}>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-5 mx-1 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                <div className={expand === res ? 'grid md:grid-cols-2 p-5 overflow-none' : 'grid md:grid-cols-2 p-5 w-full h-[100px] overflow-hidden'}>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
                 </div>
-                <button className='text-blue-400' onClick={() => setPower(res)}>{power === res ? '' : 'View More Specs'}</button>
+                
+                {/* Logic used for handling the current expanded div */}
+                {expand === res ? 
+                <button className='text-blue-400' onClick={() => setExpand(0)}>Collapse</button>: 
+                <button className='text-blue-400' onClick={() => setExpand(res)}>View More Specs</button> }
             </div>
             <br />
             <br />
