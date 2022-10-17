@@ -22,9 +22,9 @@ function ProductVariants() {
 ];
 
   return (
-    <div className='my-20 w-[80%] px-5 mx-auto'>
+    <div className='w-[80%] mx-auto mt-10'>
         <h3 className='font-sans text-xl mb-8 font-bold'>Variants Price List</h3>
-        <table className='table-auto w-full text-sm text-gray-500'>
+        <table className='table-auto w-full text-sm text-gray-500 overflow-x-auto'>
             <thead>
                 <tr className='border-b-2 p-8 text-left'>
                     <th scope="col" className="py-3 px-6">VARIANT</th>

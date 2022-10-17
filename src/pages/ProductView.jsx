@@ -84,23 +84,13 @@ function ProductView({data:open = false}) {
                         </div>
                     </div>
 
-                    </div>
-
-                {/* <div className='flex gap-5 justify-items-center items-center mb-8'>
-                    <div className='w-[30px] h-[30px] bg-red-500'></div>
-                    <div>Red</div>
-                    <div className='w-[30px] h-[30px] bg-green-500'></div>
-                    <div>Green</div>
-                    <div className='w-[30px] h-[30px] bg-yellow-500'></div>
-                    <div>Yellow</div>
-                </div> */}
-
+                </div>
 
                 <h1 className='text-4xl text-green-600 mb-10'>$ 51,000 <sub className='text-xs text-black'>Avg Ex-showroom price</sub></h1>
-                    <hr className='mt-1'/>
-                    <div className=''>
-                        <button className='bg-yellow-500 px-20 py-3 text-xl rounded text-white mt-8'>Get offers</button>
-                    </div>
+                <hr className='mt-1'/>
+                <div className=''>
+                    <button className='bg-yellow-500 px-20 py-3 text-xl rounded text-white mt-8'>Get offers</button>
+                </div>
             </div>
         </div>
         <ProductVariants />

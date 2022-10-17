@@ -6,7 +6,7 @@ import NotFound from './pages/NotFound'
 import { useState } from "react"
 import ProductsSubNav from "./pages/ProductsSubNav"
 import ProductBrands from "./pages/ProductBrands"
-import ProductView from "./pages/ProductView"
+import ProductView from "./pages/ProductView copy"
 import Footer from "./components/Footer"
 
 const App = () => {
