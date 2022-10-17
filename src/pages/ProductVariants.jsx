@@ -3,9 +3,10 @@ import {BsBatteryCharging} from 'react-icons/bs'
 
 function ProductVariants() {
     const [clamp, setClamp] = useState(false)
-    const [expand, setExpand] = useState(false)
+    const [power, setPower] = useState(false)
+    const [wheels, setWheels] = useState(false)
 
-    const table_data = [{
+  const table_data = [{
         name: "iQube Standard",
         price: "₹ 1,08,268",
         onRoad: "(On-Road Price, Salem)",
@@ -23,29 +24,31 @@ function ProductVariants() {
 
   return (
     <div className='w-[80%] mx-auto mt-10'>
-        <h3 className='font-sans text-xl mb-8 font-bold'>Variants Price List</h3>
-        <table className='table-auto w-full text-sm text-gray-500 overflow-x-auto'>
-            <thead>
-                <tr className='border-b-2 p-8 text-left'>
-                    <th scope="col" className="py-3 px-6">VARIANT</th>
-                    <th scope="col" className="py-3 px-6">PRICE</th>
-                    <th scope="col" className="py-3 px-6">SPECIFICATIONS</th>
-                </tr>
-            </thead>
-            <tbody>
-                    {table_data.map(res => <>
-                <tr className='border-b-2 p-8'>
-                    <td scope="row" className="py-5 px-6">{res.name}</td>
-                    <td scope="row" className="py-5 px-6">
-                        <p><span className='text-black'>{res.price} </span>{res.onRoad}</p>
-                        <p className='mt-3'><a href={res.offerLink} target='_blank' className='text-blue-400'>Get Offers</a></p></td>
-                    <td scope="row" className="py-5 px-6">{res.kms}</td>
-                </tr>
-                    </>)}
-            </tbody>
-        </table>
+      <h3 className='font-sans text-xl mb-8 font-bold'>Variants Price List</h3>
+        <div className='overflow-x-auto'>
+          <table className='text-sm text-gray-500 w-full'>
+                <thead>
+                    <tr className='border-b-2 p-8 text-left'>
+                        <th scope="col" className="py-3 px-6">VARIANT</th>
+                        <th scope="col" className="py-3 px-6">PRICE</th>
+                        <th scope="col" className="py-3 px-6">SPECIFICATIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {table_data.map((res, i) => <>
+                    <tr className='border-b-2 p-8' key={i}>
+                        <td scope="row" className="py-5 px-6">{res.name}</td>
+                        <td scope="row" className="py-5 px-6">
+                            <p><span className='text-black'>{res.price} </span>{res.onRoad}</p>
+                            <p className='mt-3'><a href={res.offerLink} target='_blank' className='text-blue-400'>Get Offers</a></p></td>
+                        <td scope="row" className="py-5 px-6">{res.kms}</td>
+                    </tr>
+                        </>)}
+                </tbody>
+            </table>
+          </div>
 
-        <div className='my-20'>
+           <div className='my-10'>
             <h3 className='font-sans text-xl mb-8 font-bold'>About Rompus+</h3>
             <p className={clamp ? "line-clamp-none": "line-clamp-2"}>
                 Here's a block of text from a blog post that isn't conveniently three lines long like you designed
@@ -61,31 +64,31 @@ function ProductVariants() {
 
         <hr />
 
-        <div className='my-20'>
+        <div className='my-10'>
             <h3 className='font-sans text-xl mb-8 font-bold'>Colors</h3>
-            <div className='flex justify-around'>
-                <div className='flex'>
-                    <div className='mx-5 w-[30px] h-[30px] bg-red-500'></div>
-                    <div>Red</div>
+            <div className='flex justify-around flex-wrap gap-5'>
+                <div className='flex gap-5'>
+                    <div className='w-[30px] h-[30px] bg-red-500'></div>
+                    <div className=''>Red</div>
                 </div>
-                <div className='flex'>
-                    <div className='mx-5 w-[30px] h-[30px] bg-green-500'></div>
-                    <div>Green</div>
+                <div className='flex gap-5'>
+                    <div className='w-[30px] h-[30px] bg-green-500'></div>
+                    <div className=''>Green</div>
                 </div>
-                <div className='flex'>
-                    <div className='mx-5 w-[30px] h-[30px] bg-blue-500'></div>
-                    <div>Blue</div>
+                <div className='flex gap-5'>
+                    <div className='w-[30px] h-[30px] bg-blue-500'></div>
+                    <div className=''>Blue</div>
                 </div>
-                <div className='flex'>
-                    <div className='mx-5 w-[30px] h-[30px] bg-yellow-500'></div>
-                    <div>Yellow</div>
+                <div className='flex gap-5'>
+                    <div className='w-[30px] h-[30px] bg-yellow-500'></div>
+                    <div className=''>Yellow</div>
                 </div>
             </div>
         </div>
 
         <hr />
 
-        <div className='flex justify-between my-20'>
+        <div className='flex justify-between my-10 flex-wrap'>
             <h3 className='font-sans text-xl font-bold'>Product Details</h3>
             <div className=''>
                 <label htmlFor="type"></label>
@@ -95,39 +98,57 @@ function ProductVariants() {
                     <option value="lithium">Lithium</option>
                 </select>
             </div>
-            {/* <div></div> */}
         </div>
             
-            {[1,2,3,4].map(res => 
-            <>
-            <div className='mt-5 text-center'>
+            
+            <div className='w-full md:w-[60%] mx-auto my-10'>
                 <div className='flex'>
                     <BsBatteryCharging size={32} className='text-gray-400' />
-                    <h6 className='text-xl font-semibold pl-5'>Power {JSON.stringify(res)}</h6>
+                    <h6 className='text-xl font-semibold pl-5'>Power</h6>
                 </div>
-                <div className={expand === res ? 'grid md:grid-cols-2 p-5 overflow-none' : 'grid md:grid-cols-2 p-5 w-full h-[100px] overflow-hidden'}>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
-                    <p className='p-2 mx-2 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                <div className={power ? 'grid md:grid-cols-2 overflow-none' : 'grid md:grid-cols-2 w-full h-[100px] overflow-hidden'}>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
                 </div>
                 
-                {/* Logic used for handling the current expanded div */}
-                {expand === res ? 
-                <button className='text-blue-400' onClick={() => setExpand(0)}>Collapse</button>: 
-                <button className='text-blue-400' onClick={() => setExpand(res)}>View More Specs</button> }
+                <button className='text-blue-400' onClick={() => setPower(!power)}>{power ? 'Collapse' : 'View More Specs'}</button>
+                <br />
+                <br />
+                <hr />
             </div>
-            <br />
-            <br />
+            
+            <div className='w-full md:w-[60%] mx-auto my-10'>
+                <div className='flex'>
+                    <BsBatteryCharging size={32} className='text-gray-400' />
+                    <h6 className='text-xl font-semibold pl-5'>Wheels and Suspension</h6>
+                </div>
+                <div className={wheels ? 'grid md:grid-cols-2 overflow-none' : 'grid md:grid-cols-2 w-full h-[100px] overflow-hidden'}>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                    <p className='py-3 border-b-1 text-gray-500'>Fuel Type : <span className='text-black pl-24'>Petrol</span></p>
+                </div>
+                
+                <button className='text-blue-400' onClick={() => setWheels(!wheels)}>{wheels ? 'Collapse' : 'View More Specs'}</button>
+                <br />
+                <br />
+                <hr />
+            </div>
+
+
+
             <hr />
-            </>)}
-            <br />
-            <br />
-    </div>
+      </div>
   )
 }
 

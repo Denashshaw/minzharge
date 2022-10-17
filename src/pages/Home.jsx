@@ -28,7 +28,8 @@ const featuredProducts = [
 
 let count = 0;
 let slideInterval;
-export default function Home({data:open}) {
+export default function Home({data:open = false}) {
+  console.log('home', open);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slideRef = useRef();
